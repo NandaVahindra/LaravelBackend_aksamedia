@@ -66,6 +66,34 @@ class AuthController extends Controller
         }
     }
 
+    public function checkToken(Request $request)
+    {
+        try {
+            $token = $request->bearerToken(); // Retrieve the token from the Authorization header
+    
+            if (!$token) {
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'No token provided'
+                ], 401);
+            }
+    
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Token is valid',
+                'data' => [
+                    'token' => $token // Return the token
+                ]
+            ], 200);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'status' => 'error',
+                'message' => $th->getMessage()
+            ], 500);
+        }
+    }
+    
+
     public function logout(Request $request)
     {
         try{

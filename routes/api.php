@@ -9,6 +9,7 @@ use App\Http\Controllers\API\EmployeeController;
 Route::post('login', [AuthController::class, 'login']);
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::get('checkToken', [AuthController::class, 'checkToken']);
     Route::get('divisions', [DivisionController::class, 'index']);
     Route::get('employees', [EmployeeController::class, 'index']);
     Route::post('employees', [EmployeeController::class, 'store']);
