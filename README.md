@@ -2,8 +2,6 @@
 Tested in local using postman  
 postman collection & environtment: https://drive.google.com/drive/folders/1ahnL7HzmOBa74f4_zEn0TB9gt451x9DI?usp=sharing
 
-The project already deployed:
-https://bettermc-comfy.et.r.appspot.com/api/
 ## Tugas 1
 
 ### Membuat Api Login
